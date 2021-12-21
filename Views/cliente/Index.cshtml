@@ -1,0 +1,69 @@
+@model IEnumerable<Agencia.Models.cliente>
+
+@{
+    ViewData["Title"] = "Index cliente";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4">Tenha história para contar, não coisas para mostrar.</h1>
+    <p class="lead">Viajar é criar uma memória que gostamos de revisitar porque sempre nos faz sorrir.</p>
+    <hr class="my-4">
+    <p>Vou olhar para trás e sorrir porque era a vida e eu decidi vivê-la.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sobrenome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cpf)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sobrenome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cpf)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+</html>

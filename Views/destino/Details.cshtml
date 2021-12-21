@@ -1,0 +1,67 @@
+@model Agencia.Models.destino
+
+@{
+    ViewData["Title"] = "Details destino";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+
+<body>
+
+    <div>
+        <h4>destino</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.sobrenome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.sobrenome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.origem)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.origem)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.dataOrigem)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.dataOrigem)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.retorno)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.retorno)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.dataRetorno)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.dataRetorno)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+
+</html>

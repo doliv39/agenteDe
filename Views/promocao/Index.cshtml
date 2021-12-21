@@ -1,0 +1,235 @@
+@model IEnumerable<Agencia.Models.promocao>
+
+@{
+    ViewData["Title"] = "Index promocao";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4">Tenha história para contar, não coisas para mostrar.</h1>
+    <p class="lead">Viajar é criar uma memória que gostamos de revisitar porque sempre nos faz sorrir.</p>
+    <hr class="my-4">
+    <p>Vou olhar para trás e sorrir porque era a vida e eu decidi vivê-la.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.origem)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dataOrigem)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.retorno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dataRetorno)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.origem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dataOrigem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.retorno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dataRetorno)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.preco">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.preco">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.preco">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    <div class="categorias">
+        <h3>Categorias</h3>
+        <ul>
+            <li onclick="exibir_todos()">Todos (12)</li>
+            <li onclick="exibir_categoria('pacote')">Pacotes imbatíveis</li>
+            <li onclick="exibir_categoria('cidade')">São Paulo </li>
+            <li onclick="exibir_categoria('cidade')">Rio de Janeiro</li>
+            <li onclick="exibir_categoria('pais')">Buenos Aires</li>
+            <li onclick="exibir_categoria('pais')">Lisboa</li>
+        </ul>
+
+
+        <table border="0" width="100%" cellpadding=>
+
+            <td width="20%" align="center" valign="bottom">
+                <img width="180px"
+                    src="https://media.istockphoto.com/photos/panoramic-view-from-boa-viagem-beach-picture-id1023826554?b=1&k=20&m=1023826554&s=170667a&w=0&h=TqmETyC9MxBGw-al_w-dh6fVBFsqEtNq8NSoMgskCBU="
+                    alt="Recife">
+                <br>
+                <font face="Arial" size="2">228 Passagens Baratas de São Paulo para Recife
+                </font>
+                <hr>
+                <font face="arial" size="2"><strike>R$ 389,00</strike></font> <BR>
+                <font face="arial" size="4" color="red">R$ 119,00</font><BR>
+                <hr>
+            </td>
+            <td width="20%" align="center" valign="bottom">
+                <img width="180px"
+                    src="https://media.istockphoto.com/photos/traveling-again-picture-id1345755224?b=1&k=20&m=1345755224&s=170667a&w=0&h=WIsqG8ubpgOBnZOVZIsZVNpzqKnt0XLTSD8mdnjrM-g=">
+                <br>
+                <font face="Arial" size="2">Está na hora de explorar São Paulo</font>
+                <hr>
+                <font face="arial" size="2"><strike>R$ 389,00</strike></font> <BR>
+                <font face="arial" size="4" color="red">R$ 119,00</font><BR>
+                <hr>
+            </td>
+            <td width="20%" align="center" valign="bottom">
+                <img width="180px"
+                    src="https://media.istockphoto.com/photos/tourists-on-boa-viagem-beach-in-recife-picture-id1213066775?b=1&k=20&m=1213066775&s=170667a&w=0&h=PBYnOJKtrFOUrBTR9ovDpN_IFWFO9ExCy8pQ8HJaLO0=">
+                <br>
+                <font face="Arial" size="2">230 Passagens Baratas de São Paulo para Maceió
+                </font>
+                <hr>
+                <font face="arial" size="2"><strike>R$ 689,00</strike></font> <BR>
+                <font face="arial" size="4" color="red">R$ 190,00</font><BR>
+                <hr>
+            </td>
+            <td width="20%" align="center" valign="bottom">
+                <img width="180px"
+                    src="https://images.unsplash.com/photo-1606995797360-c446110d0344?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dmlhamFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+                <br>
+                <font face="Arial" size="2">Pacotes para Espirito Santo
+                </font>
+                <hr>
+                <font face="arial" size="2"><strike>R$ 89,00</strike></font> <BR>
+                <font face="arial" size="4" color="red">R$ 19,00</font><BR>
+                <hr>
+            </td>
+            <tr>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px"
+                        src="https://images.unsplash.com/photo-1583275479278-7bc72a16c2ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpYWphcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                    <br>
+                    <font face="Arial" size="2">Pacotes para Rio de Janeiro
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 289,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 79,00</font><BR>
+                    <hr>
+                </td>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px"
+                        src="https://images.unsplash.com/photo-1566942482387-e8dc927e5829?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHZpYWdlbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                    <br>
+                    <font face="Arial" size="2">Chegamos tarde! A tarifa de R$ 649 está esgotada
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 789,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 659,00</font><BR>
+                    <hr>
+                </td>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px"
+                        src="https://images.unsplash.com/photo-1570897620600-f5f649e4968c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHZpYWphcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                    <br>
+                    <font face="Arial" size="2">Viajar para Santa Catarina
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 400,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 300,00</font><BR>
+                    <hr>
+                </td>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px"
+                        src="https://images.unsplash.com/photo-1506041968153-34b729fdc1f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpYWdlbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                    <br>
+                    <font face="Arial" size="2">Voos mais baratos do Brasil
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 89,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 79,00</font><BR>
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px" src="https://www.submarinoviagens.com.br/media/15019328/o-que-fazer-bahia.jpg">
+                    <br>
+                    <font face="Arial" size="2">Vem pra Bahia.
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 589,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 333,00</font><BR>
+                    <hr>
+                </td>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px"
+                        src="https://media.istockphoto.com/photos/amazon-river-brazil-picture-id1272388931?b=1&k=20&m=1272388931&s=170667a&w=0&h=uGKTR70dIV99f0s7yBdND_QVsllAnS-onlcNhTWfTMk=">
+                    <br>
+                    <font face="Arial" size="2">Amazonia
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 6389,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 5.019,00</font><BR>
+                    <hr>
+                </td>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px"
+                        src="https://images.unsplash.com/photo-1583275479278-7bc72a16c2ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHZpYWdlbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                    <br>
+                    <font face="Arial" size="2">Rio 2022
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 390,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 22,00</font><BR>
+                    <hr>
+                </td>
+                <td width="20%" align="center" valign="bottom">
+                    <img width="180px"
+                        src="https://images.unsplash.com/photo-1582125455304-fe0f50e94d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHZpYWdlbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                    <br>
+                    <font face="Arial" size="2">Floripa
+                    </font>
+                    <hr>
+                    <font face="arial" size="2"><strike>R$ 120,00</strike></font> <BR>
+                    <font face="arial" size="4" color="red">R$ 19,00</font><BR>
+                    <hr>
+                </td>
+            </tr>
+            <hr />
+            <hr />
+            </tr>
+        </table>
+
+
+
+    </div>
+</body>
+
+</html>
